@@ -41,8 +41,8 @@ class Owner
   def sell_pets
     self.pets.each do | type, pets|
       pets.each { |pet| pet.mood = "nervous" }
+      pets.clear
     end
-    self.pets = { fishes: [], cats: [], dogs: [] }
   end
 
   def list_pets
@@ -50,7 +50,7 @@ class Owner
   end
 
   def pet_count(pet)
-    self.pets[pet].length
+    self.pets[pet].count
   end
 
   #class methods
